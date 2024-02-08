@@ -101,6 +101,7 @@
 		8FA164F22B7349C2004123E4 /* mvcdemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FA1656D2B7529C5004123E4 /* Views */,
 				8FA165242B7349DB004123E4 /* Controller */,
 				8FA165232B7349D4004123E4 /* Model */,
 				8FA164F32B7349C2004123E4 /* AppDelegate.swift */,
@@ -140,7 +141,6 @@
 		8FA165242B7349DB004123E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8FA165252B734A00004123E4 /* StoryBoards */,
 				8FA164F72B7349C2004123E4 /* HomeController.swift */,
 			);
 			path = Controller;
@@ -152,6 +152,14 @@
 				8FA164F92B7349C2004123E4 /* Main.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		8FA1656D2B7529C5004123E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FA165252B734A00004123E4 /* StoryBoards */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
