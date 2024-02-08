@@ -18,7 +18,7 @@ final class HomeControllerTests: XCTestCase {
 
     func test_topButtonColor() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.red, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.red)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.red, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.red)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -27,7 +27,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_MiddleButtonColor() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.black, bottomBtnColor: UIColor.black)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.black, bottomBtnColor: UIColor.black)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -36,7 +36,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_BottomButtonColor() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -45,7 +45,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_noActionIdentification() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -54,7 +54,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_topButtonTapIdentification() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -64,7 +64,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_middleButtonTapIdentification() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()
@@ -74,7 +74,7 @@ final class HomeControllerTests: XCTestCase {
     
     func test_bottomButtonTapIdentification() {
         let homeController = storyboard.instantiateInitialViewController() as! HomeController
-        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        let colormodel = HomePageColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
         homeController.model = colormodel
         let _ = homeController.view
         homeController.viewDidLoad()

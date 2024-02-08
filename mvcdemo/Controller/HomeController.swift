@@ -14,7 +14,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var buttonLabel: UILabel!
     
-    var model: TrafficColorModel = TrafficColorModel(topBtnColor: UIColor.red, middleBtnColor: UIColor.green, bottomBtnColor: UIColor.blue)
+    var model: HomePageColorModel = HomePageColorModel(topBtnColor: UIColor.red, middleBtnColor: UIColor.green, bottomBtnColor: UIColor.blue)
     
     // MARK: View Cycle
     override func viewDidLoad() {

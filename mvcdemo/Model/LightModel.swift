@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol TrafficColorProtocol {
+protocol HomePageColorProtocol {
     var topButtonColor: UIColor {get}
     var middleButtonColor: UIColor {get}
     var bottomButtonColor: UIColor {get}
 }
 
-struct TrafficColorModel: TrafficColorProtocol {
+struct HomePageColorModel: HomePageColorProtocol {
     var topButtonColor: UIColor
     var middleButtonColor: UIColor
     var bottomButtonColor: UIColor
