@@ -6,36 +6,81 @@
 //
 
 import XCTest
+@testable import mvcdemo
 
 final class HomeControllerTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    override func setUp() {
+        super.setUp()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_topButtonColor() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.red, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.red)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        XCTAssertTrue(homeController.topButton.backgroundColor == colormodel.topButtonColor)
+    }
+    
+    func test_MiddleButtonColor() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.black, bottomBtnColor: UIColor.black)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        XCTAssertTrue(homeController.middleButton.backgroundColor == colormodel.middleButtonColor)
+    }
+    
+    func test_BottomButtonColor() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        XCTAssertTrue(homeController.bottomButton.backgroundColor == colormodel.bottomButtonColor)
+    }
+    
+    func test_noActionIdentification() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        XCTAssertEqual(homeController.buttonLabel.text, "No Button Tapped")
+    }
+    
+    func test_topButtonTapIdentification() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        homeController.topButtonTapped(homeController.topButton!)
+        XCTAssertEqual(homeController.buttonLabel.text, "Top Button Tapped")
+    }
+    
+    func test_middleButtonTapIdentification() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        homeController.middleButtonTapped(homeController.middleButton!)
+        XCTAssertEqual(homeController.buttonLabel.text, "Middle Button Tapped")
+    }
+    
+    func test_bottomButtonTapIdentification() {
+        let homeController = storyboard.instantiateInitialViewController() as! HomeController
+        let colormodel = TrafficColorModel(topBtnColor: UIColor.black, middleBtnColor: UIColor.red, bottomBtnColor: UIColor.yellow)
+        homeController.model = colormodel
+        let _ = homeController.view
+        homeController.viewDidLoad()
+        homeController.bottomButtonTapped(homeController.bottomButton!)
+        XCTAssertEqual(homeController.buttonLabel.text, "Bottom Button Tapped")
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }
